@@ -39,9 +39,9 @@
         android:id="@+id/slider"
         android:layout_width="349dp"
         android:layout_height="41dp"
-        android:stepSize="0.5"
+        android:stepSize="0.25"
         android:valueFrom="0.0"
-        android:valueTo="20.0"
+        android:valueTo="10.0"
         app:haloColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.579"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
