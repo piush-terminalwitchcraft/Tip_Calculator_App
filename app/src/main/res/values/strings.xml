@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TipCalculatorApp</string>
     <string name="enter_your_name">Enter your name</string>
-    <string name="ebc">Enter Bill amount</string>
+    <string name="ebc">Enter Bill amount in rupees</string>
     <string name="calc">Calculate</string>
     <string name="BillAmt">Bill Amount is </string>
     <string name="TipAmt">Tip amount is</string>
@@ -9,4 +9,5 @@
     <string name="Null" />
     <string name="todo">TODO</string>
     <string name="tca">Tip Calculator App</string>
+    <string name="or_enter_manually">or Enter manually</string>
 </resources>
