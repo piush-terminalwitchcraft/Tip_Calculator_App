@@ -18,6 +18,7 @@ public class final_screen extends AppCompatActivity {
         setContentView(R.layout.activity_final_screen);
         Intent intent = getIntent();
         String billAmount = intent.getStringExtra("BillAmt");
+
         float k = Float.parseFloat(billAmount);
         billAmount = String.format("%.2f",k);
         ba = findViewById(R.id.billamt);

@@ -41,10 +41,10 @@
         android:id="@+id/slider"
         android:layout_width="349dp"
         android:layout_height="41dp"
-
         android:valueFrom="0.0"
         android:valueTo="10.0"
-        android:value="5.0"
+        android:value="0.0"
+        android:stepSize="0.5"
         app:haloColor="#673AB7"
 
         app:layout_constraintBottom_toBottomOf="parent"

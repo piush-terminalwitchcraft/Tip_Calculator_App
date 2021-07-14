@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,15 +50,15 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString().length() != 0){
-                float k = Float.parseFloat(s.toString());
-                    if(k>=0 && k<=10){
-                        slider.setValue(k);
-                    }
-                }
-                else if(s.toString().length()==2){
-                    tt2.getText().clear();
-                }
+//                if(s.toString().length() != 0){
+//                float k = Float.parseFloat(s.toString());
+////                    if(k>=0 && k<=10){
+////                        slider.setValue(k);
+////                    }
+//                }
+//                else if(s.toString().length()==2){
+//                    tt2.getText().clear();
+//                }
             }
         });
         slider.addOnChangeListener(new Slider.OnChangeListener() {
@@ -88,17 +89,31 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-                String BillAmount = Objects.requireNonNull(tet.getText()).toString();
-                String TipPercentage = String.valueOf(slider.getValue());
-                float billAmt =Float.parseFloat(BillAmount);
-                float b = Float.parseFloat(TipPercentage);
-                float tipAmt = billAmt*b/100.00f;
-                @SuppressLint("DefaultLocale") String TipAmount = String.format("%.2f",tipAmt);
-                Intent intent = new Intent(context, final_screen.class);
-                intent.putExtra("BillAmt",BillAmount);
-                intent.putExtra("TipAmt",TipAmount);
-                startActivity(intent);
-                overridePendingTransition(R.anim.animate, R.anim.animeleft);
+                if ( ( tet.getText().toString().trim().equals("")) )
+                {
+                    Toast.makeText(getApplicationContext(), "Please enter bill amount", Toast.LENGTH_SHORT).show();
+                }
+                else if(slider.getValue() == 0 || tt2.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "Tip percentage is empty ",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    String BillAmount = Objects.requireNonNull(tet.getText()).toString();
+                    String TipPercentage = String.valueOf(slider.getValue());
+                    if(tt2.getText().toString().length()!=0){
+                        TipPercentage = tt2.getText().toString();
+                    }
+                    float billAmt =Float.parseFloat(BillAmount);
+                    float b = Float.parseFloat(TipPercentage);
+                    float tipAmt = billAmt*b/100.00f;
+                    @SuppressLint("DefaultLocale") String TipAmount = String.format("%.2f",tipAmt);
+                    Intent intent = new Intent(context, final_screen.class);
+                    intent.putExtra("BillAmt",BillAmount);
+                    intent.putExtra("TipAmt",TipAmount);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.animate, R.anim.animeleft);
+
+                }
             }
         });
 
