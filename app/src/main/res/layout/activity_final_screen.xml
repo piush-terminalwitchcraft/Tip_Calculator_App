@@ -6,11 +6,7 @@
     android:layout_height="match_parent"
 
     tools:context=".final_screen">
-    <com.example.fmm.Typewriter
-        android:id="@+id/typewriter"
-        android:layout_alignParentTop="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+    
     <TextView
         android:id="@+id/textView6"
         android:layout_width="140dp"
